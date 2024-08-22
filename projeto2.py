@@ -1,33 +1,41 @@
+from audioop import error
+
 while True:
-    opcao = input("Escolha uma operação (Soma, Subtracao, Multiplicacao, Divisao): ").upper()
+    opcao = input("Escolha uma operação (Soma, Subtração, Multiplicação, Divisão): ").upper()
 
-    if opcao in ["SOMA", "SUBTRACAO", "MULTIPLICACAO", "DIVISAO"]:
-        try:
-            a = float(input("Digite o primeiro número: "))
-            b = float(input("Digite o segundo número: "))
-        except ValueError:
-            print("Entrada inválida. Por favor, digite números válidos.")
-            continue  # Reinicia o loop se a entrada for inválida
-
-        try:
-            if opcao == "SOMA":
-                resultado = a + b
-                print(f"\nResultado da soma: {resultado:.2f}\n")
-                
-            elif opcao == "SUBTRACAO":
-                resultado = a - b
-                print(f"\nResultado da subtração: {resultado:.2f}\n")
-                
-            elif opcao == "MULTIPLICACAO":
-                resultado = a * b
-                print(f"\nResultado da multiplicação: {resultado:.2f}\n")
-                
-            elif opcao == "DIVISAO":
-                resultado = a / b
-                print(f"\nResultado da divisão: {resultado:.2f}\n")
-        except ZeroDivisionError:
-            print("Erro: Divisão por zero não é permitida.")
-        
-        break  # Sai do loop após realizar a operação
+    if opcao == "SOMA":
+        print("Você escolheu a operação de Soma.")
+        break
+    elif opcao == "SUBTRACAO":
+        print("Você escolheu a operação de Subtração.")
+        break
+    elif opcao == "MULTIPLICACAO":
+        print("Você escolheu a operação de Multiplicação.")
+        break
+    elif opcao == "DIVISAO":
+        print("Você escolheu a operação de Divisão.")
+        break
     else:
-        print("Operação inválida. Tente novamente.")
+        print("Operação inválida.")
+
+a=float(input( "\nDigite o primeiro numero: "))
+b=float(input( "\nDigite o segundo numero: "))
+    
+try:
+    if opcao == "SOMA":
+        resultado = a+b
+        print(f"\n{resultado:.2f}\n")
+        
+    elif opcao =="SUBTRACAO":
+        resultado = a-b
+        print(f"\n{resultado:.2f}\n")
+        
+    elif opcao =="MULTIPLICACAO":
+        resultado = a*b
+        print(f"\n{resultado:.2f}\n")
+        
+    elif opcao =="DIVISAO":
+        resultado = a/b
+        print(f"\n{resultado:.2f}\n")
+except ZeroDivisionError:
+    print("Erro: Divisão por zero não é permitida.")
